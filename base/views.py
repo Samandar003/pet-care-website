@@ -1,6 +1,10 @@
-from django.shortcuts import render
-
-
+from django.shortcuts import render, redirect
+from .models import *
+from .forms import MyUserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def home(request):
     
@@ -29,13 +33,40 @@ def single(request):
     return render(request, 'base/single.html')
 
 def registerPage(request):
+    page = 'register'
+    form = MyUserCreationForm()
+    if request.method == 'POST':
+        form = MyUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Something went wrong!!!')
 
-    return render(request, 'base/login_register.html')
+    context = {'form':form, 'page':page}
+    return render(request, 'base/login_register.html', context)
 
 def loginPage(request):
+    page = 'login'
+    if request.method == 'POST':
+        username = request.POST['username'].lower()
+        password = request.POST['password']
+        try:
 
-    return render(request, 'base/login_register.html')
+            user = User.objects.filter(username=username).first()
+        except:
+            messages.error(request, 'User Not Found!!!')
+        user = authenticate(request, username=username, password=password)
+        if user:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username Or password is incorrect')
+    context = {'page':page, 'messages':messages}
+    return render(request, 'base/login_register.html', context)
 
 
 
-    
