@@ -114,7 +114,7 @@
                     </div>
                     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
+                <a href="{% url 'service' %}" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
             </div>
         </nav>
     </div>
@@ -132,8 +132,8 @@
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
                             <h1 class="display-3 text-white mb-3">Keep Your Pet Happy</h1>
                             <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                            <a href="{% url 'booking' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
+                            <a href="{% url 'about' %}" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -144,8 +144,8 @@
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
                             <h1 class="display-3 text-white mb-3">Pet Spa & Grooming</h1>
                             <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                            <a href="{% url 'booking' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
+                            <a href="{% url 'about' %}" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5></li>
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Customer Support</h5></li>
                 </ul>
-                <a href="" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
+                <a href="{% url 'service' %}" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
             </div>
             <div class="col-lg-5">
                 <div class="row px-3">
@@ -297,7 +297,7 @@
                         <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Boarding</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -305,7 +305,7 @@
                         <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Feeding</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -313,7 +313,7 @@
                         <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Grooming</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -321,7 +321,7 @@
                         <h3 class="flaticon-cat display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Per Training</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -329,7 +329,7 @@
                         <h3 class="flaticon-dog display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Exercise</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
@@ -337,7 +337,7 @@
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
                         <h3 class="mb-3">Pet Treatment</h3>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                        <a class="text-uppercase font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
             </div>
@@ -626,7 +626,7 @@
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
-                        <a class="font-weight-bold" href="">Read More</a>
+                        <a class="font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
             </div>
@@ -641,7 +641,7 @@
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
-                        <a class="font-weight-bold" href="">Read More</a>
+                        <a class="font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
             </div>
@@ -656,7 +656,7 @@
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
                         <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
-                        <a class="font-weight-bold" href="">Read More</a>
+                        <a class="font-weight-bold" href="{% url 'single' %}">Read More</a>
                     </div>
                 </div>
             </div>
