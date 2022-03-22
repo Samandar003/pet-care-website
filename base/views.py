@@ -69,4 +69,32 @@ def loginPage(request):
     return render(request, 'base/login_register.html', context)
 
 
+def createBooking(request):
+    if request.method == 'POST':
+        name = request.POST['name'].lower()
+        email = request.POST['email']
+        reservation_date = request.POST['reservation_date']
+        reservation_time = request.POST['reservation_time']
+        service = request.POST['service']
+        booking = Booking.objects.create(
+            name=name,
+            email=email,
+            reservation_date=reservation_date,
+            reservation_time=reservation_time,
+            service=service
+        )
+        return redirect('home')
+    return render(request, 'base/index.html')
 
+
+def createnewsletter(request):
+    if request.method == 'POST':
+        name = request.POST['name'].lower()
+        email = request.POST['email']
+        newsletter = Newsletter.objects.create(
+            name = name,
+            email = email
+        )
+        return redirect('home')
+    return render(request, 'base/index.html')
+    

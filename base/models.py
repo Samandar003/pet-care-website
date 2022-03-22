@@ -8,9 +8,9 @@ from django.utils import timezone
 
 class Booking(models.Model):
     SERVICE = (
-        ("Service 1", "Service 1"),
-        ("Service 2", "Service 2"),
-        ("Service 3", "Service 3"),
+        ("1", "1"),
+        ("2", "2"),
+        ("3", "3"),
 
     )
     name = models.CharField(max_length=200)
