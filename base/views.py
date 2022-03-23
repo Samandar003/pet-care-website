@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import MyUserCreationForm
@@ -5,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 def home(request):
     
@@ -76,25 +78,31 @@ def createBooking(request):
         reservation_date = request.POST['reservation_date']
         reservation_time = request.POST['reservation_time']
         service = request.POST['service']
-        booking = Booking.objects.create(
-            name=name,
-            email=email,
-            reservation_date=reservation_date,
-            reservation_time=reservation_time,
-            service=service
-        )
-        return redirect('home')
-    return render(request, 'base/index.html')
-
+        try:
+            booking = Booking.objects.create(
+                name=name,
+                email=email,
+                reservation_date=reservation_date,
+                reservation_time=reservation_time,
+                service=service
+            )
+            booking.save()
+            return HttpResponse('You are booked')
+        except:
+            return HttpResponse('You are already booked')
 
 def createnewsletter(request):
     if request.method == 'POST':
         name = request.POST['name'].lower()
         email = request.POST['email']
-        newsletter = Newsletter.objects.create(
-            name = name,
-            email = email
-        )
-        return redirect('home')
-    return render(request, 'base/index.html')
-    
+        try:
+            newsletter = Newsletter.objects.create(
+                name = name,
+                email = email
+            )
+            newsletter.save()
+            return HttpResponse('You are enrolled for newsletter')    
+        except:
+            return HttpResponse('You are already enrolled for newsletter')    
+
+

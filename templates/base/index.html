@@ -171,7 +171,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form class="py-5" method="POST" action="">
+                        <form class="py-5" method="POST" action="{% url 'createbooking' %}">
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
@@ -180,21 +180,21 @@
                                 <input type="email" name="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
                             </div>
                             <div class="form-group">
-                                <div class="date" id="date" data-target-input="nearest">
+                                <!-- <div class="date" id="date" data-target-input="nearest"> -->
                                     <input type="text" name="reservation_date" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" data-target="#date" data-toggle="datetimepicker"/>
-                                </div>
+                                <!-- </div> -->
                             </div>
                             <div class="form-group">
-                                <div class="time" id="time" data-target-input="nearest">
+                                <!-- <div class="time" id="time" data-target-input="nearest"> -->
                                     <input type="text" name="reservation_time" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Time" data-target="#time" data-toggle="datetimepicker"/>
-                                </div>
+                                <!-- </div> -->
                             </div>
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
+                                <select name="service" class="custom-select border-0 px-4" style="height: 47px;">
                                     <option selected>Select A Service</option>
-                                    <option value="1" name="service">Service 1</option>
-                                    <option value="2" name="service">Service 2</option>
-                                    <option value="3" name="service">Service 3</option>
+                                    <option value="service 1">Service 1</option>
+                                    <option value="service 2">Service 2</option>
+                                    <option value="service 3">Service 3</option>
                                 </select>
                             </div>
                             <div>
@@ -699,7 +699,7 @@
                     </div>
                     <div class="col-md-4 mb-5">
                         <h5 class="text-primary mb-4">Newsletter</h5>
-                        <form action="" method="POST">
+                        <form action="{% url 'createnewsletter' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control border-0" placeholder="Your Name" required="required" />
